@@ -1,6 +1,12 @@
 import React from 'react';
 
-const AlertPopup = ({ show, onClose ,mesg }) => {
+interface Alertpopup {
+  show: boolean;
+  onClose: () => void; 
+  mesg: string;
+}
+
+const AlertPopup: React.FC<Alertpopup> = ({ show, onClose ,mesg }) => {
   if (!show) return null;
 
   return (

@@ -18,8 +18,14 @@ export async function GET(request: NextRequest) {
         } else {
             return NextResponse.json({ success: false, message: 'User not found' }, { status: 404 });
         }
-    } catch (error) {
-        console.error(error);
-        return NextResponse.json({ success: false, message: error.message }, { status: 500 });
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            console.error('Error occurred:', error.message);
+            return NextResponse.json({ success: false, message: error.message });
+        } else {
+            console.error('An unexpected error occurred:', error);
+            return NextResponse.json({ success: false, message: 'An unexpected error occurred' });
+        }
     }
+    
 }

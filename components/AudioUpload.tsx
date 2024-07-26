@@ -140,7 +140,7 @@ const AudioUpload: React.FC = () => {
         </div>
         {audioFile && (
           <div className="mt-4 text-center ">
-            <input type='text' className="text-gray-700 dark:text-gray-300 font-medium bg-gray-300 rounded-lg h-10 md:w-[200px]" onChange={(e)=>setFilename(e.target.value)} value={`  ${filename}`}/><span>✍️</span>
+            <input type='text' className="text-black dark:text-gray-100 font-medium bg-gray-300 dark:bg-gray-800 rounded-lg h-10 md:w-[200px]" onChange={(e)=>setFilename(e.target.value)} value={`  ${filename}`}/><span>✍️</span>
           </div>
         )}
         <button

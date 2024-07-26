@@ -116,7 +116,7 @@ const Navbar = () => {
                         {status === "authenticated" && (
                             <>
                                 <img
-                                    src={session.user?.image}
+                                    src={session.user?.image ||""}
                                     alt={session.user?.name || 'Profile Image'}
                                     className="w-8 h-8 rounded-full object-cover"
                                 />

@@ -3,6 +3,11 @@ import { v2 as cloudinary } from 'cloudinary'
 import dbConnect from '@/lib/mongodb'
 import User from '@/lib/models/User'
 
+interface CloudinaryResult {
+    secure_url: string;
+   
+}
+
 
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -15,9 +20,9 @@ export async function POST(request: NextRequest) {
     const data = await request.formData()
     console.log('Form data received');
 
-    for (const [key, value] of data.entries()) {
-      console.log(`FormData key: ${key}, value: ${value}`);
-  }
+//     for (const [key, value] of data.entries()) {
+//       console.log(`FormData key: ${key}, value: ${value}`);
+//   }
 
     const file: File | null = data.get('file') as unknown as File
     const email: string = data.get('email') as string
@@ -37,7 +42,7 @@ export async function POST(request: NextRequest) {
 
         console.log('Uploading to Cloudinary'); 
         // Upload the file to Cloudinary
-        const result = await new Promise((resolve, reject) => {
+        const result = await new Promise<CloudinaryResult>((resolve, reject) => {
             cloudinary.uploader.upload_stream(
                 { resource_type: 'auto' },
                 (error, result) => {
@@ -46,7 +51,7 @@ export async function POST(request: NextRequest) {
                         return reject(new Error(`Cloudinary upload failed: ${error.message}`))
                     }
                     console.log('Cloudinary result:', result) 
-                    resolve(result)
+                    resolve(result as CloudinaryResult)
                 }
             ).end(buffer)
         })
@@ -66,8 +71,14 @@ export async function POST(request: NextRequest) {
         }
 
         return NextResponse.json({ success: true, audioUrl })
-    } catch (error) {
-        console.error('Error occurred:', error) 
-        return NextResponse.json({ success: false, message: error.message })
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            console.error('Error occurred:', error.message);
+            return NextResponse.json({ success: false, message: error.message });
+        } else {
+            console.error('An unexpected error occurred:', error);
+            return NextResponse.json({ success: false, message: 'An unexpected error occurred' });
+        }
     }
+    
 }

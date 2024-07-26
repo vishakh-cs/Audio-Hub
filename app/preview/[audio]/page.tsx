@@ -2,7 +2,14 @@
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-const AudioPreview = ({ params }) => {
+interface AudioPreviewProps {
+  params: {
+    audio: string;
+    title: string;
+  };
+}
+
+const AudioPreview:React.FC<AudioPreviewProps> = ({ params }) => {
 
   const router = useRouter();
   const { audio, title } = params;
