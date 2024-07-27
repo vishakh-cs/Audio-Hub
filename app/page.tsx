@@ -28,13 +28,17 @@ function Page() {
               </BoxReveal>
             </div>
             <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-              <h1 className='text-4xl md:text-5xl text-center font-extrabold text-gray-900 dark:text-gray-50 mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
+              <h1 className='text-4xl md:text-5xl text-center font-extrabold text-gray-900  mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
                 Welcome to Audio Hub
               </h1>
             </BoxReveal>
             <BoxReveal boxColor={"#5046e6"} duration={0.5}>
               <p className='text-lg md:text-xl text-gray-800 dark:text-gray-300 mb-8 text-center max-w-md'>
-                Audio Hub is a cutting-edge audio sharing platform where users can effortlessly upload, share, and explore audio content. Whether you're a musician, podcaster, or just a music enthusiast, Audio Hub provides a seamless experience to connect with friends or share your favorite audio with the world.
+                Audio Hub is a cutting-edge audio sharing platform where users 
+                can effortlessly upload, share, and explore audio content. 
+                Whether you're a musician, podcaster, or just a music enthusiast,
+                 Audio Hub provides a seamless experience to connect with friends
+                  or share your favorite audio with the world.
               </p>
             </BoxReveal>
           </div>
@@ -44,31 +48,31 @@ function Page() {
             <h2 className='text-2xl md:text-3xl font-semibold text-gray-900 dark:text-gray-50 mb-6'>Features:</h2>
             <ul className='space-y-4 md:space-y-6'>
               <li className='flex items-center space-x-3 md:space-x-4'>
-                <FaUpload className='text-blue-500' size={24} md={30} />
+                <FaUpload className='text-blue-500' size={24} />
                 <span className='text-base md:text-lg font-medium text-gray-700 dark:text-gray-300'>
                   Upload audio files quickly and easily.
                 </span>
               </li>
               <li className='flex items-center space-x-3 md:space-x-4'>
-                <FaShareAlt className='text-green-500' size={24} md={30} />
+                <FaShareAlt className='text-green-500' size={24} />
                 <span className='text-base md:text-lg font-medium text-gray-700 dark:text-gray-300'>
                   Share audio with friends, family, or the public.
                 </span>
               </li>
               <li className='flex items-center space-x-3 md:space-x-4'>
-                <FaHeadphones className='text-purple-500' size={24} md={30} />
+                <FaHeadphones className='text-purple-500' size={24} />
                 <span className='text-base md:text-lg font-medium text-gray-700 dark:text-gray-300'>
                   Discover and listen to a wide range of audio content.
                 </span>
               </li>
               <li className='flex items-center space-x-3 md:space-x-4'>
-                <FaPlay className='text-red-500' size={24} md={30} />
+                <FaPlay className='text-red-500' size={24}  />
                 <span className='text-base md:text-lg font-medium text-gray-700 dark:text-gray-300'>
                   Personalize your audio collection and create playlists.
                 </span>
               </li>
               <li className='flex items-center space-x-3 md:space-x-4'>
-                <FaUsers className='text-orange-500' size={24} md={30} />
+                <FaUsers className='text-orange-500' size={24} />
                 <span className='text-base md:text-lg font-medium text-gray-700 dark:text-gray-300'>
                   Engage with a community of audio enthusiasts.
                 </span>

@@ -1,17 +1,16 @@
-"use client";
+"use client"
 import { useState } from "react";
 import { IoMoon } from "react-icons/io5";
 import { IoIosSunny } from "react-icons/io";
 import { useTheme } from 'next-themes';
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation"; 
 import { signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
-
-    const router = useRouter()
+    const router = useRouter(); 
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const { theme, setTheme } = useTheme();
-    const { data: session, status } = useSession()
+    const { data: session, status } = useSession();
 
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
@@ -25,7 +24,11 @@ const Navbar = () => {
         signOut({ callbackUrl: '/' });
     };
 
-    return (
+    const pathname = usePathname()
+    const shouldShowNavbar = pathname !== "/login";
+    console.log(shouldShowNavbar);
+
+    return shouldShowNavbar ? (
         <nav className={`bg-gray-50/10 backdrop-blur-md sticky top-0 z-50`}>
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
@@ -116,7 +119,7 @@ const Navbar = () => {
                         {status === "authenticated" && (
                             <>
                                 <img
-                                    src={session.user?.image ||""}
+                                    src={session.user?.image || ""}
                                     alt={session.user?.name || 'Profile Image'}
                                     className="w-8 h-8 rounded-full object-cover"
                                 />
@@ -140,7 +143,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {mobileMenuOpen && (
+            {shouldShowNavbar && mobileMenuOpen && (
                 <div className="sm:hidden" id="mobile-menu">
                     <div className="space-y-1 px-2 pb-3 pt-2">
                         <a
@@ -152,22 +155,21 @@ const Navbar = () => {
                         </a>
                         <a
                             href="/upload_audio"
-                            className={`block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-700 hover:text-white ${theme === 'dark' ? 'text-gray-50' : 'text-gray-950'}`}
+                            className={`block rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white ${theme === 'dark' ? 'text-gray-50' : 'text-gray-950'}`}
                         >
-                            upload_audio
+                            Upload Audio
                         </a>
                         <a
                             href="/"
-                            className={`block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-700 hover:text-white ${theme === 'dark' ? 'text-gray-50' : 'text-gray-950'}`}
+                            className={`block rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white ${theme === 'dark' ? 'text-gray-50' : 'text-gray-950'}`}
                         >
                             Projects
                         </a>
-
                     </div>
                 </div>
             )}
         </nav>
-    );
+    ) : null; // Render nothing if the route is '/login'
 };
 
 export default Navbar;

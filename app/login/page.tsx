@@ -65,7 +65,7 @@ function Page() {
                     <div className="space-y-4 text-center">
                         <h3 className="text-white text-4xl font-extrabold">Start Uploading Your Audio Quickly</h3>
                         <p className="text-gray-300 text-lg">
-                            Create an account and get access to all features for 30 days. No credit card required.
+                            Create an account and get access to all features 
                         </p>
                     </div>
                 </div>
