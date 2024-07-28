@@ -148,7 +148,7 @@ const Navbar = () => {
                     <div className="space-y-1 px-2 pb-3 pt-2">
                         <a
                             href="/"
-                            className={`block rounded-md bg-gray-900 px-3 py-2 text-base font-medium ${theme === 'dark' ? 'text-gray-50' : 'text-gray-950'}`}
+                            className={`block rounded-md hover:bg-gray-700 hover:text-white px-3 py-2 text-base font-medium ${theme === 'dark' ? 'text-gray-50' : 'text-gray-950'}`}
                             aria-current="page"
                         >
                             Dashboard
@@ -169,7 +169,7 @@ const Navbar = () => {
                 </div>
             )}
         </nav>
-    ) : null; // Render nothing if the route is '/login'
+    ) : null; 
 };
 
 export default Navbar;
