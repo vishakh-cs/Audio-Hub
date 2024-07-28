@@ -20,7 +20,7 @@ function Page() {
       <MarqueeSection />
       <Meteors number={15} />
       <div className='flex flex-col md:flex-row'>
-        <div className='w-full h-screen bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 dark:from-gray-900 dark:via-purple-900 dark:to-pink-900 flex flex-col md:flex-row'>
+        <div className='w-full h-[100%] bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 dark:from-gray-900 dark:via-purple-900 dark:to-pink-900 flex flex-col md:flex-row'>
           <div className='flex-1 flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-900'>
             <div className='py-6'>
               <BoxReveal boxColor={"#5046e6"} duration={0.5}>
