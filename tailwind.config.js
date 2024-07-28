@@ -11,6 +11,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'customGray': '#121212',
+      },
+
       animation: {
         meteor: "meteor 5s linear infinite",
       },

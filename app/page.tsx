@@ -16,12 +16,12 @@ function Page() {
   }
 
   return (
-    <div className='flex flex-col relative w-screen justify-center overflow-hidden'>
+    <div className='flex flex-col relative w-screen justify-center overflow-hidden '>
       <MarqueeSection />
       <Meteors number={15} />
       <div className='flex flex-col md:flex-row'>
         <div className='w-full h-[100%] bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 dark:from-gray-900 dark:via-purple-900 dark:to-pink-900 flex flex-col md:flex-row'>
-          <div className='flex-1 flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-900'>
+          <div className='flex-1 flex flex-col items-center justify-center p-6 bg-white dark:bg-customGray'>
             <div className='py-6'>
               <BoxReveal boxColor={"#5046e6"} duration={0.5}>
                 <Button />
@@ -44,7 +44,7 @@ function Page() {
           </div>
 
           {/* Features Section */}
-          <div className='flex-1 bg-white dark:bg-gray-900 p-6 md:p-8 rounded-lg shadow-xl flex flex-col justify-center'>
+          <div className='flex-1 bg-white dark:bg-customGray p-6 md:p-8 rounded-lg shadow-xl flex flex-col justify-center'>
             <h2 className='text-2xl md:text-3xl font-semibold text-gray-900 dark:text-gray-50 mb-6'>Features:</h2>
             <ul className='space-y-4 md:space-y-6'>
               <li className='flex items-center space-x-3 md:space-x-4'>

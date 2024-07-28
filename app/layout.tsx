@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <NextAuthProvider >
-          <ThemeProvider attribute="class">
+         <ThemeProvider attribute="class" defaultTheme="light">
             <Navbar />
             {children}
           </ThemeProvider>

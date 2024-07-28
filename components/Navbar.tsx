@@ -52,8 +52,10 @@ const Navbar = () => {
                             )}
                         </button>
                     </div>
-                    <div className="flex flex-1 items-center justify-start sm:justify-start sm:items-stretch">
-                        <div className="flex flex-shrink-0 items-center ml-5 px-4">
+                    <div className="flex flex-1 items-center cursor-pointer justify-start sm:justify-start sm:items-stretch">
+                        <div className="flex flex-shrink-0 items-center ml-5 px-4"
+                        onClick={() => router.push("/")}>
+                            
                             <svg
                                 width="150"
                                 height="40"
@@ -84,6 +86,7 @@ const Navbar = () => {
                                     />
                                 </g>
                                 <text
+                                  
                                     x="80"
                                     y="35"
                                     fill="#4F46E5"
@@ -98,8 +101,8 @@ const Navbar = () => {
                         <div className="hidden sm:ml-6 sm:block">
                             <div className={`flex space-x-4 ${theme === 'dark' ? 'text-gray-50' : 'text-gray-950'}`}>
                                 <a href="/" className={`rounded-md px-3 py-2 text-sm font-medium ${theme === 'dark' ? 'text-gray-50' : 'text-gray-950'}`} aria-current="page">Dashboard</a>
-                                <a href="/upload_audio" className={`rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white ${theme === 'dark' ? 'text-gray-50' : 'text-gray-950'}`}>Upload Audio</a>
-                                <a href="/" className={`rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white ${theme === 'dark' ? 'text-gray-50' : 'text-gray-950'}`}>Projects</a>
+                                <a href="/upload_audio" className={`rounded-md px-3 py-2 text-sm font-medium  hover:text-white ${theme === 'dark' ? 'text-gray-50' : 'text-gray-950'}`}>Upload Audio</a>
+                                <a href="/" className={`rounded-md px-3 py-2 text-sm font-medium  hover:text-white ${theme === 'dark' ? 'text-gray-50' : 'text-gray-950'}`}>Projects</a>
                             </div>
                         </div>
                     </div>
